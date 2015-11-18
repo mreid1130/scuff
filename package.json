@@ -1,6 +1,6 @@
 {
   "name": "scuff",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple wrapper to make scraping dynamic content easier",
   "main": "index.js",
   "repository": "git://github.com/mreid1130/scuff",
