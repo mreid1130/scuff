@@ -91,5 +91,3 @@ module.exports.dynamic = function(url, next, options) {
     });
   }
 };
-
-// require('./index.js').static('http://www.milb.com/schedule/results.jsp?sid=t402&year=2016', function(err, body) { if(err) {console.log(err.stack)}console.log(body);}, {retries: 7});
