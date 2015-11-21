@@ -2,7 +2,7 @@ var phantom = require('phantom');
 var request = require('request');
 
 module.exports.static = function(url, next, options) {
-  if (options.retries) {
+  if (options && options.retries) {
     if (typeof options.retries !== 'number') {
       return next(new Error('options.retries must be a number'));
     }
@@ -39,7 +39,7 @@ module.exports.static = function(url, next, options) {
 };
 
 module.exports.dynamic = function(url, next, options) {
-  if (options.retries) {
+  if (options && options.retries) {
     if (typeof options.retries !== 'number') {
       return next(new Error('options.retries must be a number'));
     }
