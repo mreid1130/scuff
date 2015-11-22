@@ -1,7 +1,7 @@
 {
   "name": "scuff",
   "version": "0.2.0",
-  "description": "Simple wrapper to make scraping dynamic content easier",
+  "description": "A lightweight wrapper for phantom and request.",
   "main": "index.js",
   "repository": "git://github.com/mreid1130/scuff",
   "scripts": {
@@ -13,7 +13,16 @@
     "phantom",
     "phantomjs",
     "dynamic",
-    "scraper"
+    "scraper",
+    "request",
+    "web content",
+    "dynamic scraper",
+    "scraper request",
+    "javascript scraper",
+    "scrape javascript",
+    "script scraper",
+    "dynamic javascript",
+    "dynamic content"
   ],
   "author": "Mark Reid",
   "license": "MIT",
