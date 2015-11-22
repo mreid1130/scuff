@@ -15,7 +15,7 @@ module.exports.static = function(url, next, options) {
   if (options.retries > 5) {
     options.retries = 5;
   }
-  if (options.attempts) {
+  if (options.attempts && typeof options.attempts === 'number') {
     options.attempts++;
   } else {
     options.attempts = 1;
@@ -49,7 +49,7 @@ module.exports.dynamic = function(url, next, options) {
   if (options.retries > 5) {
     options.retries = 5;
   }
-  if (options.attempts) {
+  if (options.attempts && typeof options.attempts === 'number') {
     options.attempts++;
   } else {
     options.attempts = 1;
