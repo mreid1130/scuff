@@ -1,5 +1,6 @@
 var phantom = require('phantom');
 var request = require('request');
+var cheerio = require('cheerio');
 
 module.exports.static = function(url, next, options) {
   if (!options) {
@@ -30,7 +31,15 @@ module.exports.static = function(url, next, options) {
         }, Math.pow(2, options.attempts) * 500);
       }
     } else {
-      next(err, body.trim());
+      var $;
+      try {
+        $ = cheerio.load(body, {
+          xmlMode: (options.xml ? true : false)
+        });
+      } catch (error) {
+        return next(error);
+      }
+      next(err, $);
     }
   });
 };
@@ -60,7 +69,15 @@ module.exports.dynamic = function(url, next, options) {
         if (status === 'success') {
           page.get('content', function(content) {
             ph.exit();
-            next(null, content.trim());
+            var $;
+            try {
+              $ = cheerio.load(content, {
+                xmlMode: (options.xml ? true : false)
+              });
+            } catch (error) {
+              return next(error);
+            }
+            next(null, $);
           });
         } else {
           ph.exit();

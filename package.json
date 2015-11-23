@@ -27,6 +27,7 @@
   "author": "Mark Reid",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^0.19.0",
     "phantom": "^0.8.3",
     "request": "^2.65.0"
   }
