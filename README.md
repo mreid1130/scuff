@@ -2,12 +2,12 @@
 
 [![NPM version](http://img.shields.io/npm/v/scuff.svg)](https://www.npmjs.org/package/scuff)
 
-A lightweight wrapper for phantom and request.
+One stop shop for web scraping with node. A lightweight wrapper for phantom, request, and cheerio.
 
 ## Functions
 ### static(url, callback, options)
 
-Uses request to get HTML body of static webpages.
+Uses request to get an HTML body of static webpage. Returns a function, `$`, that has jQuery like functionality in node.
 
 __Arguments__
 
@@ -17,7 +17,7 @@ __Arguments__
 
 ### dynamic(url, callback, options)
 
-Uses phantom to get HTML body of a dynamic site (includes dynamic content rendered by JavaScript)
+Uses phantom to get HTML body of a dynamic site (includes dynamic content rendered by JavaScript). Returns a function, `$`, that has jQuery like functionality in node.
 
 __Arguments__
 
