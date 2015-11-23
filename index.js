@@ -71,9 +71,7 @@ module.exports.dynamic = function(url, next, options) {
             ph.exit();
             var $;
             try {
-              $ = cheerio.load(content, {
-                xmlMode: (options.xml ? true : false)
-              });
+              $ = cheerio.load(content);
             } catch (error) {
               return next(error);
             }
