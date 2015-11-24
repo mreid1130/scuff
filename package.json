@@ -1,6 +1,6 @@
 {
   "name": "scuff",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "One stop shop for web scraping with node. A lightweight wrapper for phantom, request, and cheerio.",
   "main": "index.js",
   "repository": "git://github.com/mreid1130/scuff",
