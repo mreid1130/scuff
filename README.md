@@ -2,6 +2,8 @@
 
 [![NPM version](http://img.shields.io/npm/v/scuff.svg)](https://www.npmjs.org/package/scuff)
 
+[![NPM](https://nodei.co/npm/scuff.png?downloads=true)](https://nodei.co/npm/scuff/)
+
 One stop shop for web scraping with node. A lightweight wrapper for phantom, request, and cheerio.
 
 ## Functions
