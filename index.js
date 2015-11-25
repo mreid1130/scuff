@@ -32,10 +32,14 @@ module.exports.static = function(url, next, options) {
       }
     } else {
       var $;
+      var cheerioOptions;
+      if (options.cheerio && typeof options.cheerio === 'object') {
+        cheerioOptions = options.cheerio;
+      } else {
+        cheerioOptions = {};
+      }
       try {
-        $ = cheerio.load(body, {
-          xmlMode: (options.xml ? true : false)
-        });
+        $ = cheerio.load(body, cheerioOptions);
       } catch (error) {
         return next(error);
       }
