@@ -67,7 +67,11 @@ module.exports.dynamic = function(url, next, options) {
   } else {
     options.attempts = 1;
   }
-  phantom.create(function(ph) {
+  phantom.create({
+    parameters: {
+      'web-security': 'no'
+    }
+  }, function(ph) {
     ph.createPage(function(page) {
       page.open(url, function(status) {
         if (status === 'success') {
