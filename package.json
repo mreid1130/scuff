@@ -7,9 +7,10 @@
   "repository": "git://github.com/mreid1130/scuff",
   "scripts": {
     "prepublish": "gulp build",
+    "build": "gulp build",
     "flow": "flow",
-    "lint": "eslint . && flow check",
-    "test": "mocha",
+    "lint": "eslint .",
+    "test": "npm run lint && mocha",
     "pretest": "gulp build:test"
   },
   "main": "index.js",
@@ -38,19 +39,18 @@
     "javascript"
   ],
   "dependencies": {
-    "cheerio": "^1.0.0-rc.1",
-    "phantom": "^4.0.3",
-    "request": "^2.81.0"
+    "htmlparser2": "^3.9.2",
+    "needle": "^1.6.0",
+    "phantom": "^4.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.5.1",
-    "babel-preset-flow": "^6.23.0",
+    "cheerio": "^1.0.0-rc.1",
     "del": "^2.2.2",
     "eslint": "^3.19.0",
     "expect.js": "^0.3.1",
-    "flow-bin": "^0.47.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-copy": "^1.0.0",
