@@ -1,6 +1,5 @@
 var phantom = require('phantom');
 var needle = require('needle');
-var URL = require('url');
 
 var staticRequest = (url, config = {}) => {
   return new Promise((resolve, reject) => {
@@ -56,16 +55,7 @@ var dynamicRequest = (url, config = {}) => {
 var Request = (url, timeout) => {
   var config = {};
   config.timeout = timeout || 0;
-  var request = timeout ? DynamicRequest : StaticRequest;
-
-  if (url.substr(0, 1) === '//') {
-    url = URL.parse('http:' + url, true);
-  } else if (url.substr(0, 4) !== 'http') {
-    url = URL.parse('http://' + url, true);
-  } else {
-    url = URL.parse(url, true);
-  }
-
+  var request = timeout ? dynamicRequest : staticRequest;
   return request(url, config);
 };
 
